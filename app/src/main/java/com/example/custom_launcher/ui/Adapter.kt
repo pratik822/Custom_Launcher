@@ -78,6 +78,8 @@ class Adapter(var installedApps: java.util.ArrayList<AppData>, var ctx:Context) 
             val launchIntent = act.packageManager.getLaunchIntentForPackage(appData.package_Name)
             if(launchIntent!=null){
                 act.startActivity(launchIntent)
+            }else{
+                Toast.makeText(ctx, "Package not found", Toast.LENGTH_SHORT).show();
             }
 
         }catch (e:Exception){
